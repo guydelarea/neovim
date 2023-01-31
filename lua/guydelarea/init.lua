@@ -24,5 +24,7 @@ require("indent_blankline").setup {
     show_current_context = true,
     show_current_context_start = true,
 }
+-- Snippets
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/home/guy/.config/nvim/snippets/" } })
 -- Done!
 print("GuyDelarea NeoVim 1.0")

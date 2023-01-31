@@ -20,27 +20,48 @@ return require('packer').startup(function(use)
   use('ryanoasis/vim-devicons')
   use('lukas-reineke/indent-blankline.nvim')
   use('kdheepak/lazygit.nvim')
-  use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
-   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+  use {
+      "someone-stole-my-name/yaml-companion.nvim",
+      requires = {
+          { "neovim/nvim-lspconfig" },
+          { "nvim-lua/plenary.nvim" },
+          { "nvim-telescope/telescope.nvim" },
+      },
+      config = function()
+          require("telescope").load_extension("yaml_schema")
+      end,
+  }
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use({
+      "L3MON4D3/LuaSnip",
+      -- follow latest release.
+      tag = "v1.2.1",
+      -- install jsregexp (optional!:).
+      run = "make install_jsregexp"
+  })
+  use {
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v1.x',
+      requires = {
+          -- LSP Support
+          {'neovim/nvim-lspconfig'},
+          {'williamboman/mason.nvim'},
+          {'williamboman/mason-lspconfig.nvim'},
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+          -- Autocompletion
+          {'hrsh7th/nvim-cmp'},
+          {'hrsh7th/cmp-buffer'},
+          {'hrsh7th/cmp-path'},
+          {'saadparwaiz1/cmp_luasnip'},
+          {'hrsh7th/cmp-nvim-lsp'},
+          {'hrsh7th/cmp-nvim-lua'},
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
+          -- Snippets
+          {'L3MON4D3/LuaSnip'},
+          {'rafamadriz/friendly-snippets'},
+      }
   }
 end)
