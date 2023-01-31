@@ -26,5 +26,8 @@ require("indent_blankline").setup {
 }
 -- Snippets
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/home/guy/.config/nvim/snippets/" } })
+-- K8s
+local lspconfig = require'lspconfig'
+lspconfig.yamlls.setup {}
 -- Done!
 print("GuyDelarea NeoVim 1.0")

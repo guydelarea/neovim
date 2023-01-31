@@ -21,17 +21,6 @@ return require('packer').startup(function(use)
   use('lukas-reineke/indent-blankline.nvim')
   use('kdheepak/lazygit.nvim')
   use {
-      "someone-stole-my-name/yaml-companion.nvim",
-      requires = {
-          { "neovim/nvim-lspconfig" },
-          { "nvim-lua/plenary.nvim" },
-          { "nvim-telescope/telescope.nvim" },
-      },
-      config = function()
-          require("telescope").load_extension("yaml_schema")
-      end,
-  }
-  use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
@@ -64,4 +53,27 @@ return require('packer').startup(function(use)
           {'rafamadriz/friendly-snippets'},
       }
   }
+-- LSP
+use {
+  "someone-stole-my-name/yaml-companion.nvim",
+  requires = {
+    { "neovim/nvim-lspconfig" },
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope.nvim" },
+},
+config = function()
+    require("telescope").load_extension("yaml_schema")
+    local cfg = require("yaml-companion").setup({
+        schemas = {
+            result = {
+                {
+                    name = "Kubernetes 1.22.5",
+                    uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.5-standalone-strict/all.json",
+                },
+            },
+        },
+    })
+    require("lspconfig")["yamlls"].setup(cfg)
+end,
+}
 end)
