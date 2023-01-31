@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
   use('ryanoasis/vim-devicons')
   use('lukas-reineke/indent-blankline.nvim')
   use('kdheepak/lazygit.nvim')
+  use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
    use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
