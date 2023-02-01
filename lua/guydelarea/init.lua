@@ -27,22 +27,5 @@ require("indent_blankline").setup {
 }
 -- Snippets
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/home/guy/.config/nvim/snippets/" } })
--- K8s
-require('lspconfig').yamlls.setup {
-  settings = {
-    yaml = {
-      schemas = {
-        ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
-      },
-    },
-  }
-}
-local cfg = require("yaml-companion").setup({
-  -- Add any options here, or leave empty to use the default settings
-  -- lspconfig = {
-  --   cmd = {"yaml-language-server"}
-  -- },
-})
-require("lspconfig")["yamlls"].setup(cfg)
 -- Done!
 print("GuyDelarea NeoVim 1.0")
