@@ -31,7 +31,10 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
-
+vim.opt.foldlevel = 20
+vim.opt.foldmethod = "indent"
+vim.opt.foldignore =""
+vim.opt.splitright=true
 -- Snippets
 vim.cmd([[
 let g:UltiSnipsExpandTrigger="<tab>"

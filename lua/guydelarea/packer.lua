@@ -1,8 +1,6 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -24,13 +22,6 @@ return require('packer').startup(function(use)
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  use({
-      "L3MON4D3/LuaSnip",
-      -- follow latest release.
-      tag = "v1.2.1",
-      -- install jsregexp (optional!:).
-      run = "make install_jsregexp"
-  })
   use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v1.x',
@@ -53,27 +44,15 @@ return require('packer').startup(function(use)
           {'rafamadriz/friendly-snippets'},
       }
   }
--- LSP
-use {
+  use {
   "someone-stole-my-name/yaml-companion.nvim",
   requires = {
-    { "neovim/nvim-lspconfig" },
-    { "nvim-lua/plenary.nvim" },
-    { "nvim-telescope/telescope.nvim" },
-},
-config = function()
+      { "neovim/nvim-lspconfig" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope.nvim" },
+  },
+  config = function()
     require("telescope").load_extension("yaml_schema")
-    local cfg = require("yaml-companion").setup({
-        schemas = {
-            result = {
-                {
-                    name = "Kubernetes 1.22.5",
-                    uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.5-standalone-strict/all.json",
-                },
-            },
-        },
-    })
-    require("lspconfig")["yamlls"].setup(cfg)
-end,
+  end,
 }
 end)

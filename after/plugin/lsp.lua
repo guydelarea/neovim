@@ -4,9 +4,8 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
-  'sumneko_lua',
-  'rust_analyzer',
   'pyright',
+  'yamlls',
 })
 
 -- Fix Undefined global 'vim'
@@ -29,7 +28,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
-
+local cmp_config = lsp.defaults.cmp_config({})
+cmp.setup(cmp_config)
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
@@ -38,7 +38,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
+    suggest_lsp_servers = true,
     sign_icons = {
         error = 'E',
         warn = 'W',
@@ -67,4 +67,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-
