@@ -67,3 +67,34 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require('lspconfig')['yamlls'].setup{
+        on_attach = on_attach,
+        filetypes = { "yaml", "yml" },
+        flags = { debounce_test_changes = 150 },
+        settings = {
+            yaml = {
+                format = {
+                    enable = true,
+                    singleQuote = true,
+                    printWidth = 120,
+                },
+                hover = true,
+                completion = true,
+                validate = true,
+                schemas = {
+                    ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.20.13/all.json"] = {
+                        "/*.yaml",
+                        "/*.yml",
+                    },
+                },
+                schemaStore = {
+                    enable = true,
+                    url = "https://www.schemastore.org/json",
+                },
+            },
+        },
+    }
