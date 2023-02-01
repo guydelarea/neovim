@@ -63,19 +63,39 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['yamlls'].setup{
-    on_attach=on_attach,
-    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-    settings = {
-        yaml = {
-            schemas = {
-                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-                ["http://json.schemastore.org/kustomization"] = "kustomization.yaml",
-                ["https://json.schemastore.org/chart.json"] = "Chart.yaml",
-                ["https://json.schemastore.org/taskfile.json"] = "Taskfile*.yml",
-                ["https://raw.githubusercontent.com/GoogleContainerTools/skaffold/master/docs/content/en/schemas/v2beta26.json"] = "skaffold.yaml",
-                ["https://raw.githubusercontent.com/rancher/k3d/main/pkg/config/v1alpha3/schema.json"] = "k3d.yaml",
-                ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.20.13/all.json"] = "/*.yaml",
-            }
-        }
+        on_attach = on_attach,
+        filetypes = { "yaml", "yml" },
+        flags = { debounce_test_changes = 150 },
+        settings = {
+            yaml = {
+                format = {
+                    enable = true,
+                    singleQuote = true,
+                    printWidth = 120,
+                },
+                hover = true,
+                completion = true,
+                validate = true,
+                schemas = {
+                    ["https://raw.githubusercontent.com/awslabs/goformation/v6.10.0/schema/cloudformation.schema.json"] = {
+                        "/cloudformation.yml",
+                        "/cloudformation.yaml",
+                        "/*.cf.yml",
+                        "/cf.yaml",
+                    },
+                    ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = {
+                        "/.gitlab-ci.yml",
+                        "/.gitlab-ci.yaml",
+                    },
+                    ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.20.13/all.json"] = {
+                        "/*.yaml",
+                        "/*.yml",
+                    },
+                },
+                schemaStore = {
+                    enable = true,
+                    url = "https://www.schemastore.org/json",
+                },
+            },
+        },
     }
-}
