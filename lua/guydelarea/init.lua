@@ -3,7 +3,6 @@
 --      To Do:
 --          Add Snippets
 --          Add Formmater
---          Fix Lazygit
 --          Add Tab KeyMaps
 
 -- To Fix Treesitter 

@@ -88,6 +88,7 @@ require('lspconfig')['yamlls'].setup{
                 schemas = {
                     ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.20.13/all.json"] = {
                         "/*.yaml",
+                        "/*.yml",
                     },
                 },
                 schemaStore = {
