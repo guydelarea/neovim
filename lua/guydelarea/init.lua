@@ -1,8 +1,8 @@
 --
 -- Guy Delarea Neovim Plugin
 --      To Do:
---          Add Snippets
 --          Add Formmater
+--          Add Python Debuuger
 --          Add Tab KeyMaps
 
 -- To Fix Treesitter 
@@ -25,6 +25,7 @@ require("indent_blankline").setup {
     show_current_context_start = true,
 }
 -- Snippets
+require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/home/guy/.config/nvim/snippets/" } })
 -- Done!
 print("GuyDelarea NeoVim 1.0")
