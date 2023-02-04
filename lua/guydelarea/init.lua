@@ -3,7 +3,6 @@
 --      To Do:
 --          Add Formmater
 --          Add Python Debuuger
---          Add Tab KeyMaps
 
 -- To Fix Treesitter 
 -- :TSInstall vim
@@ -27,5 +26,11 @@ require("indent_blankline").setup {
 -- Snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/home/guy/.config/nvim/snippets/" } })
+-- Jenkinsfile as groovy
+vim.cmd([[
+augroup filetypedetect
+    autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
+augroup END
+]])
 -- Done!
-print("GuyDelarea NeoVim 1.0")
+print("GuyDelarea Neovim Config 1.0")
