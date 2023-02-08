@@ -16,6 +16,13 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf")
 	use("nvim-treesitter/playground")
 	use("preservim/nerdtree")
+	use({
+		"startup-nvim/startup.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		config = function()
+			require("startup").setup()
+		end,
+	})
 	use("ryanoasis/vim-devicons")
 	use({
 		"williamboman/mason.nvim",
@@ -25,6 +32,7 @@ return require("packer").startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 	use("kdheepak/lazygit.nvim")
 	use("rafamadriz/friendly-snippets")
+	use("lewis6991/satellite.nvim")
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -51,8 +59,8 @@ return require("packer").startup(function(use)
 			{ "rafamadriz/friendly-snippets" },
 		},
 	})
-    -- Adding Debugger
+	-- Adding Debugger
 	use("mfussenegger/nvim-dap")
-    use 'mfussenegger/nvim-dap-python'
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use("mfussenegger/nvim-dap-python")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 end)

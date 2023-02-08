@@ -10,6 +10,7 @@
 require("guydelarea.remap")
 require("guydelarea.packer")
 require("guydelarea.yaml")
+require("startup").setup({theme = "guydelarea"}) -- put theme name here
 -- Neovim Global Settings 
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -34,5 +35,7 @@ augroup END
 -- Python Debugger
 require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 require("dapui").setup()
+-- Minimap
+require('satellite').setup()
 -- Done!
 print("GuyDelarea Neovim Config 1.0")
