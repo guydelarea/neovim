@@ -16,6 +16,11 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use('preservim/nerdtree')
   use('ryanoasis/vim-devicons')
+  use {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+      "jay-babu/mason-null-ls.nvim",
+  }
   use('lukas-reineke/indent-blankline.nvim')
   use('kdheepak/lazygit.nvim')
   use("rafamadriz/friendly-snippets")

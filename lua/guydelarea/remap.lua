@@ -6,9 +6,10 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Keybinds
-map('n', '<C-d>', ':NERDTreeToggle<CR>', { silent = true})
-map('n', '<C-e>', ':FZF<CR>', { silent = true})
-map('n', '<C-g>', ':LazyGit<CR>', { silent = true})
+map("n", "<C-d>", ":NERDTreeToggle<CR>", { silent = true })
+map("n", "<C-e>", ":FZF<CR>", { silent = true })
+map("n", "<C-g>", ":LazyGit<CR>", { silent = true })
+map("n", "<C-f>", ":lua vim.lsp.buf.format()<CR>", { silent = true })
 
 -- Sets
 vim.opt.guicursor = ""
@@ -33,13 +34,13 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 vim.opt.foldlevel = 20
 vim.opt.foldmethod = "indent"
-vim.opt.foldignore =""
-vim.opt.splitright=true
+vim.opt.foldignore = ""
+vim.opt.splitright = true
 -- Tabs
-vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>tabnew<CR>", {noremap=true})
-vim.api.nvim_set_keymap("n", "<C-q>", "<cmd>tabclose<CR>", {noremap=true})
-vim.api.nvim_set_keymap("n", "gt", "<cmd>tabnext<CR>", {noremap=true})
-vim.api.nvim_set_keymap("n", "gr", "<cmd>tabprev<CR>", {noremap=true})
+vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>tabnew<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-q>", "<cmd>tabclose<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gt", "<cmd>tabnext<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gr", "<cmd>tabprev<CR>", { noremap = true })
 -- Snippets
 vim.cmd([[
 let g:UltiSnipsExpandTrigger="<tab>"
