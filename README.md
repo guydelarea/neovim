@@ -1,4 +1,4 @@
-# Guy Delarea NeoVIM Config
+# Guy Delarea neovim Config
 version 1.0
 ```
  _   _ _____ _____     _____ __  __
@@ -7,8 +7,20 @@ version 1.0
 | |\  | |__| |_| |\ V /  | || |  | |
 |_| \_|_____\___/  \_/  |___|_|  |_|
 ```
-LSP - Working
-DAP - Working
-Linter-Formmater - Working
-AutoCMP - Working
 
+## To Do List
+
+- [X] LSP
+- [X] DAP
+- [X] Linter
+  - [X] Formmater
+- [ ] Re-Vamped KeyBinds
+
+## Known Issues:
+To Fix Treesitter 
+```
+:TSInstall vim
+```
+
+## KeyBinds
+- [ ] Add Keymaps
