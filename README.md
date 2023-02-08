@@ -7,3 +7,8 @@ version 1.0
 | |\  | |__| |_| |\ V /  | || |  | |
 |_| \_|_____\___/  \_/  |___|_|  |_|
 ```
+LSP - Working
+DAP - Working
+Linter-Formmater - Working
+AutoCMP - Working
+

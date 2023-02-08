@@ -1,7 +1,7 @@
 --
 -- Guy Delarea Neovim Plugin
 --      To Do:
---          Add Python Debuuger
+--      More Keymaps
 
 -- To Fix Treesitter 
 -- :TSInstall vim
