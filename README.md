@@ -15,11 +15,20 @@ version 1.0
 - [X] Linter
   - [X] Formmater
 - [ ] Re-Vamped KeyBinds
+- [ ] Adding Startup Screen 
+- [ ] Adding Tmux Support
 
 ## Known Issues:
 To Fix Treesitter 
 ```
 :TSInstall vim
+```
+Python Debugger
+```
+mkdir .virtualenvs
+cd .virtualenvs
+python -m venv debugpy
+debugpy/bin/python -m pip install debugpy
 ```
 
 ## KeyBinds
