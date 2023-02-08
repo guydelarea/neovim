@@ -1,7 +1,6 @@
 --
 -- Guy Delarea Neovim Plugin
 --      To Do:
---          Add Formmater
 --          Add Python Debuuger
 
 -- To Fix Treesitter 
