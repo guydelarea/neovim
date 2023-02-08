@@ -31,5 +31,12 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
 augroup END
 ]])
+-- Python Debugger
+-- mkdir .virtualenvs
+-- cd .virtualenvs
+-- python -m venv debugpy
+-- debugpy/bin/python -m pip install debugpy
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+require("dapui").setup()
 -- Done!
 print("GuyDelarea Neovim Config 1.0")

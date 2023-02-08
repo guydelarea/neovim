@@ -10,6 +10,7 @@ map("n", "<C-d>", ":NERDTreeToggle<CR>", { silent = true })
 map("n", "<C-e>", ":FZF<CR>", { silent = true })
 map("n", "<C-g>", ":LazyGit<CR>", { silent = true })
 map("n", "<C-f>", ":lua vim.lsp.buf.format()<CR>", { silent = true })
+map("n", "<C-i>", ":lua vim.diagnostic.open_float()<CR>", { silent = true })
 
 -- Sets
 vim.opt.guicursor = ""
@@ -41,6 +42,33 @@ vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>tabnew<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-q>", "<cmd>tabclose<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gt", "<cmd>tabnext<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gr", "<cmd>tabprev<CR>", { noremap = true })
+-- Debugger
+vim.keymap.set('n', '<F3>', function() require("dapui").toggle() end)
+vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
+vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
+vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
+vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
+    require('dap.ui.widgets').hover()
+end)
+vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
+    require('dap.ui.widgets').preview()
+end)
+vim.keymap.set('n', '<Leader>df', function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.frames)
+end)
+vim.keymap.set('n', '<Leader>ds', function()
+    local widgets = require('dap.ui.widgets')
+    widgets.centered_float(widgets.scopes)
+end)
+
+
 -- Snippets
 vim.cmd([[
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -58,4 +86,5 @@ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 " For changing choices in choiceNodes (not strictly necessary for a basic setup).
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
 ]])
