@@ -30,6 +30,20 @@ cd .virtualenvs
 python -m venv debugpy
 debugpy/bin/python -m pip install debugpy
 ```
+## To Install 
+Install Lua
+```
+sudo apt install lua3.5
+```
+Install Packer
+```
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+then run:
+```
+PackerSync
+```
 
 ## KeyBinds
 - [ ] Add Keymaps
