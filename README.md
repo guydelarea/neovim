@@ -15,7 +15,7 @@ version 1.0
 - [X] Linter
   - [X] Formmater
 - [ ] Re-Vamped KeyBinds
-- [ ] Adding Startup Screen 
+- [X] Adding Startup Screen 
 - [ ] Adding Tmux Support
 
 ## Known Issues:
