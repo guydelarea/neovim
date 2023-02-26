@@ -12,7 +12,7 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({ "ellisonleao/gruvbox.nvim" })
-    use 'nvim-tree/nvim-web-devicons'
+	use("nvim-tree/nvim-web-devicons")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdateSync" })
 	use("junegunn/fzf")
 	use("nvim-treesitter/playground")
@@ -81,6 +81,14 @@ return require("packer").startup(function(use)
 	})
 	use({
 		"utilyre/barbecue.nvim",
-        after = "nvim-web-devicons",
+		tag = "*",
+		requires = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		after = "nvim-web-devicons", -- keep this if you're using NvChad
+		config = function()
+			require("barbecue").setup()
+		end,
 	})
 end)
