@@ -12,9 +12,11 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({ "ellisonleao/gruvbox.nvim" })
+    use 'nvim-tree/nvim-web-devicons'
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdateSync" })
 	use("junegunn/fzf")
 	use("nvim-treesitter/playground")
+	use("MunifTanjim/nui.nvim")
 	use("preservim/nerdtree")
 	use({
 		"startup-nvim/startup.nvim",
@@ -30,8 +32,18 @@ return require("packer").startup(function(use)
 		"jay-babu/mason-null-ls.nvim",
 	})
 	use("lukas-reineke/indent-blankline.nvim")
+	use({
+		"romgrk/barbar.nvim",
+		requires = { "kyazdani42/nvim-web-devicons" },
+	})
 	use("kdheepak/lazygit.nvim")
 	use("rafamadriz/friendly-snippets")
+	use({
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup()
+		end,
+	})
 	use("lewis6991/satellite.nvim")
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -63,4 +75,12 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use("mfussenegger/nvim-dap-python")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+	})
+	use({
+		"utilyre/barbecue.nvim",
+        after = "nvim-web-devicons",
+	})
 end)

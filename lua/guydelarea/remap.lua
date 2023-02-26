@@ -43,8 +43,10 @@ vim.api.nvim_set_keymap("n", "<leader>of", "<cmd>Telescope oldfiles<CR>", { nore
 -- Tabs
 vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>tabnew<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-q>", "<cmd>tabclose<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gt", "<cmd>tabnext<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gr", "<cmd>tabprev<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gt", "<cmd>BufferNext<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gr", "<cmd>BufferPrevious<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gt", "<cmd>BufferMoveNext<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gr", "<cmd>BufferMovePrevious<CR>", { noremap = true })
 -- Debugger
 vim.keymap.set('n', '<F3>', function() require("dapui").toggle() end)
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
