@@ -37,6 +37,9 @@ vim.opt.foldlevel = 20
 vim.opt.foldmethod = "indent"
 vim.opt.foldignore = ""
 vim.opt.splitright = true
+-- Telescope
+vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>of", "<cmd>Telescope oldfiles<CR>", { noremap = true })
 -- Tabs
 vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>tabnew<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-q>", "<cmd>tabclose<CR>", { noremap = true })
