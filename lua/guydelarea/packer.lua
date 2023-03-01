@@ -17,6 +17,7 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf")
 	use("nvim-treesitter/playground")
 	use("MunifTanjim/nui.nvim")
+	use("f-person/git-blame.nvim")
 	use("preservim/nerdtree")
 	use({
 		"startup-nvim/startup.nvim",

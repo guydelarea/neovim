@@ -127,6 +127,11 @@ _G.packer_plugins = {
     path = "/home/guy/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
+  ["git-blame.nvim"] = {
+    loaded = true,
+    path = "/home/guy/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/guy/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
