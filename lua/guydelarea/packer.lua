@@ -38,12 +38,6 @@ return require("packer").startup(function(use)
 	})
 	use("kdheepak/lazygit.nvim")
 	use("rafamadriz/friendly-snippets")
-	use({
-		"loctvl842/monokai-pro.nvim",
-		config = function()
-			require("monokai-pro").setup()
-		end,
-	})
 	use("lewis6991/satellite.nvim")
 	use({
 		"nvim-lualine/lualine.nvim",

@@ -1,48 +1,50 @@
 require("barbecue").setup({
 	attach_navic = false, -- prevent barbecue from automatically attaching nvim-navic
-	theme = "auto",
-	symbols = {
-		---Modification indicator.
-		---
-		---@type string
-		modified = "●",
+    theme = "auto",
+    context_follow_icon_color = false,
 
-		---Truncation indicator.
-		---
-		---@type string
-		ellipsis = "…",
+    symbols = {
+        ---Modification indicator.
+        ---
+        ---@type string
+        modified = "●",
 
-		---Entry separator.
-		---
-		---@type string
-		separator = ">>",
-	},
+        ---Truncation indicator.
+        ---
+        ---@type string
+        ellipsis = "…",
+
+        ---Entry separator.
+        ---
+        ---@type string
+        separator = "",
+    },
     kinds = {
-        File = ">>",
-        Module = ">>",
-        Namespace = ">>",
-        Package = ">>",
-        Class = ">>",
-        Method = ">>",
-        Property = ">>",
-        Field = ">>",
-        Constructor = ">>",
-        Enum = ">>",
-        Interface = ">>",
-        Function = ">>",
-        Variable = ">>",
-        Constant = ">>",
-        String = ">>",
-        Number = ">>",
-        Boolean = ">>",
-        Array = ">>",
-        Object = ">>",
-        Key = ">>",
-        Null = ">>",
-        EnumMember = ">>",
-        Struct = ">>",
-        Event = ">>",
-        Operator = ">>",
-        TypeParameter = ">>",
+        File = "",
+        Module = "",
+        Namespace = "",
+        Package = "",
+        Class = "",
+        Method = "",
+        Property = "",
+        Field = "",
+        Constructor = "",
+        Enum = "",
+        Interface = "",
+        Function = "",
+        Variable = "",
+        Constant = "",
+        String = "",
+        Number = "",
+        Boolean = "",
+        Array = "",
+        Object = "",
+        Key = "",
+        Null = "",
+        EnumMember = "",
+        Struct = "",
+        Event = "",
+        Operator = "",
+        TypeParameter = "",
     },
 })
