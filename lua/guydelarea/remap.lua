@@ -42,7 +42,7 @@ vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>Telescope live_grep<CR>", { nor
 vim.api.nvim_set_keymap("n", "<leader>of", "<cmd>Telescope oldfiles<CR>", { noremap = true })
 -- Tabs
 vim.api.nvim_set_keymap("n", "<C-t>", "<cmd>tabnew<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-w>", "<cmd>BufferClose<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-q>", "<cmd>BufferClose<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gt", "<cmd>BufferNext<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "gr", "<cmd>BufferPrevious<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>gt", "<cmd>BufferMoveNext<CR>", { noremap = true })
