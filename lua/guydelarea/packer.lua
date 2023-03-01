@@ -19,6 +19,12 @@ return require("packer").startup(function(use)
 	use("MunifTanjim/nui.nvim")
 	use("f-person/git-blame.nvim")
 	use("preservim/nerdtree")
+    use {
+        "loctvl842/monokai-pro.nvim",
+        config = function()
+            require("monokai-pro").setup()
+        end
+    }
 	use({
 		"startup-nvim/startup.nvim",
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
