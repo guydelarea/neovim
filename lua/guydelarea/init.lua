@@ -10,6 +10,7 @@
 require("guydelarea.remap")
 require("guydelarea.packer")
 require("guydelarea.yaml")
+require("guydelarea.filetypes")
 require("startup").setup({theme = "guydelarea"}) -- put theme name here
 -- Neovim Global Settings 
 vim.wo.number = true
