@@ -19,6 +19,7 @@ return require("packer").startup(function(use)
 	use("MunifTanjim/nui.nvim")
     use({'ckipp01/nvim-jenkinsfile-linter', requires = { "nvim-lua/plenary.nvim" } })
 	use("f-person/git-blame.nvim")
+    use {"xiyaowong/nvim-transparent"}
 	use("preservim/nerdtree")
     use {
         "loctvl842/monokai-pro.nvim",
