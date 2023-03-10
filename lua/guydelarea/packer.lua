@@ -24,13 +24,6 @@ return require("packer").startup(function(use)
     use("Shatur/neovim-session-manager")
     use {'nvim-telescope/telescope-ui-select.nvim' }
 	use("preservim/nerdtree")
-	use({
-		"startup-nvim/startup.nvim",
-		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-		config = function()
-			require("startup").setup()
-		end,
-	})
 	use("ryanoasis/vim-devicons")
 	use({
 		"williamboman/mason.nvim",
