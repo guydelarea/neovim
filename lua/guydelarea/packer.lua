@@ -17,16 +17,10 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf")
 	use("nvim-treesitter/playground")
 	use("MunifTanjim/nui.nvim")
-    use({'ckipp01/nvim-jenkinsfile-linter', requires = { "nvim-lua/plenary.nvim" } })
+	use({ "ckipp01/nvim-jenkinsfile-linter", requires = { "nvim-lua/plenary.nvim" } })
 	use("f-person/git-blame.nvim")
-    use {"xiyaowong/nvim-transparent"}
+	use({ "xiyaowong/nvim-transparent" })
 	use("preservim/nerdtree")
-    use {
-        "loctvl842/monokai-pro.nvim",
-        config = function()
-            require("monokai-pro").setup()
-        end
-    }
 	use({
 		"startup-nvim/startup.nvim",
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
@@ -49,10 +43,6 @@ return require("packer").startup(function(use)
 	use("rafamadriz/friendly-snippets")
 	use("lewis6991/satellite.nvim")
 	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
-	use({
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v1.x",
 		requires = {
@@ -73,6 +63,10 @@ return require("packer").startup(function(use)
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
 		},
+	})
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 	-- Adding Debugger
 	use("mfussenegger/nvim-dap")

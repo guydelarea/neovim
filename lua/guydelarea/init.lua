@@ -1,11 +1,4 @@
---
 -- Guy Delarea Neovim Plugin
---      To Do:
---      More Keymaps
-
--- To Fix Treesitter 
--- :TSInstall vim
-
 -- Requires
 require("guydelarea.remap")
 require("guydelarea.packer")
@@ -38,5 +31,10 @@ require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 require("dapui").setup()
 -- Minimap
 require('satellite').setup()
+-- Lualine
+require('lualine').setup()
+-- gruvbox
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
 -- Done!
 print("GuyDelarea Neovim Config 1.0")
