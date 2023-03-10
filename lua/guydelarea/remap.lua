@@ -11,6 +11,8 @@ map("n", "<C-e>", ":FZF<CR>", { silent = true })
 map("n", "<C-g>", ":LazyGit<CR>", { silent = true })
 map("n", "<C-f>", ":lua vim.lsp.buf.format()<CR>", { silent = true })
 map("n", "<C-i>", ":lua vim.diagnostic.open_float()<CR>", { silent = true })
+map("n", "<C-s>", ":SessionManager save_current_session<CR>", { silent = true })
+map("n", "<C-l>", ":SessionManager load_current_dir_session<CR>", { silent = true })
 
 -- Sets
 vim.opt.guicursor = ""

@@ -17,9 +17,12 @@ return require("packer").startup(function(use)
 	use("junegunn/fzf")
 	use("nvim-treesitter/playground")
 	use("MunifTanjim/nui.nvim")
+
 	use({ "ckipp01/nvim-jenkinsfile-linter", requires = { "nvim-lua/plenary.nvim" } })
 	use("f-person/git-blame.nvim")
 	use({ "xiyaowong/nvim-transparent" })
+    use("Shatur/neovim-session-manager")
+    use {'nvim-telescope/telescope-ui-select.nvim' }
 	use("preservim/nerdtree")
 	use({
 		"startup-nvim/startup.nvim",

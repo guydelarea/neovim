@@ -172,6 +172,11 @@ _G.packer_plugins = {
     path = "/home/guy/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neovim-session-manager"] = {
+    loaded = true,
+    path = "/home/guy/.local/share/nvim/site/pack/packer/start/neovim-session-manager",
+    url = "https://github.com/Shatur/neovim-session-manager"
+  },
   nerdtree = {
     loaded = true,
     path = "/home/guy/.local/share/nvim/site/pack/packer/start/nerdtree",
@@ -262,6 +267,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/guy/.local/share/nvim/site/pack/packer/start/startup.nvim",
     url = "https://github.com/startup-nvim/startup.nvim"
+  },
+  ["telescope-ui-select.nvim"] = {
+    loaded = true,
+    path = "/home/guy/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
